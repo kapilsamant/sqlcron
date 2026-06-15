@@ -1,0 +1,2 @@
+pyodbc>=5.0
+croniter>=2.0
