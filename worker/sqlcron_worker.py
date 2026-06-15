@@ -190,11 +190,11 @@ def execute_job(conn: pyodbc.Connection, job: dict, attempt: int = 1) -> bool:
     cursor.execute(
         """
         INSERT INTO sqlcron.job_runs (job_id, job_name, started_at, status, attempt, worker_id)
+        OUTPUT INSERTED.id
         VALUES (?, ?, ?, 'Running', ?, ?)
         """,
         job["id"], job["name"], start, attempt, WORKER_ID,
     )
-    cursor.execute("SELECT SCOPE_IDENTITY()")
     run_id = int(cursor.fetchone()[0])
 
     success = False

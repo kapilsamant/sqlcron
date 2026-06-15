@@ -1,6 +1,6 @@
 # sqlcron
 
-**pg_cron for SQL Server** — a lightweight, database-native job scheduler.
+A lightweight, database-native job scheduler for SQL Server.
 
 Install a schema and a worker. Schedule SQL jobs using cron syntax.
 
